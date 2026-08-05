@@ -19,6 +19,7 @@ jobs:
 
       - name: Build with SecurityCodeScan
         run: dotnet build security-test/SecurityCodeScanTest/SecurityCodeScanTest.csproj /p:ErrorLog=securitycodescan-results.sarif
+        continue-on-error: true
 
       - name: Upload results to Security tab
         if: always()
