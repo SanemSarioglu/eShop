@@ -18,7 +18,7 @@ jobs:
           dotnet-quality: 'preview'
 
       - name: Build with SecurityCodeScan
-        run: dotnet build security-test/SecurityCodeScanTest/SecurityCodeScanTest.csproj /p:ErrorLog=securitycodescan-results.sarif
+        run: dotnet build security-test/SecurityCodeScanTest/SecurityCodeScanTest.csproj /p:ErrorLog=${{ github.workspace }}/securitycodescan-results.sarif
         continue-on-error: true
 
       - name: Upload results to Security tab
